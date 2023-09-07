@@ -34,13 +34,17 @@ function DeloppgaveC() {
     const [bredde, setBredde] = useState(0)
     const [lengde, setLengde] = useState(0)
 
+    function updateField() {
+        console.log('update field');
+    }
+
     return (
         <>
             <h1> Deloppgave C. </h1>
             <h2> Areal av en trekant:  </h2>
-            <input type="number" value={bredde}/>
+            <input type="number" value={bredde} onChange={updateField}/>
             <input type="number" value={lengde}/>
-            
+
             <h3> Arealet for rektangel: {bredde * lengde} </h3>
         </>
     )
