@@ -31,21 +31,31 @@ function DeloppgaveB() {
 
 function DeloppgaveC() {
 
-    const [bredde, setBredde] = useState(0)
-    const [lengde, setLengde] = useState(0)
+    const [bredde, setBredde] = useState(5)
+    const [lengde, setLengde] = useState(10)
 
-    function updateField() {
+
+    function updateBredde(event) {
         console.log('update field');
+        console.log(event.target.value);
+        setBredde(event.target.value);
+    }
+
+    function updateLengde(event) {
+        console.log('update field');
+        console.log(event.target.value);
+        setLengde(event.target.value);
     }
 
     return (
         <>
             <h1> Deloppgave C. </h1>
             <h2> Areal av en trekant:  </h2>
-            <input type="number" value={bredde} onChange={updateField}/>
-            <input type="number" value={lengde}/>
+            <input type="number" value={bredde} onChange={updateBredde}/>
+            <input type="number" value={lengde} onChange={updateLengde}/>
 
             <h3> Arealet for rektangel: {bredde * lengde} </h3>
+            <h3> Arealet for trekant: {(bredde * lengde)/2} </h3>
         </>
     )
 }

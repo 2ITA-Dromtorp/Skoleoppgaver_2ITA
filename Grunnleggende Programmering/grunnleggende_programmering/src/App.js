@@ -1,6 +1,7 @@
 import './App.css';
 import Oppgave1 from './Oppgave1';
 import Oppgave2 from './Oppgave2';
+import Pil from './Pil';
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
        
-        <Oppgave2 />
+        <Pil />
 
       </header>
     </div>
