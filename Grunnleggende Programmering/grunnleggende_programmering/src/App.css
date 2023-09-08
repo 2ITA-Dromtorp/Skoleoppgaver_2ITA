@@ -64,3 +64,19 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.box {
+  border: solid red 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.box img {
+  width: 30%;
+  height: 30%;
+  margin: 6em;
+}
+
+.box p {
+  font-size: 4em;
+}
