@@ -7,12 +7,22 @@ export default function Pil() {
 
     const [count, setCount] = useState(5);
 
+    function countUp() {
+        console.log('count up')
+        setCount(count + 1)
+    }
+
+    function countDown() {
+        console.log('count down')
+        setCount(count + 1)
+    }
+
     return (
 
         <div className='box'>
-            <button type="button"> <img src={arrowup} alt="arrow up" /></button>
+            <button type="button" onClick={countUp}> <img src={arrowup} alt="arrow up" /></button>
             <p> {count} </p>
-            <button type="button"> <img src={arrowdown} alt="arrow down"/> </button>
+            <button type="button" onClick={countDown}> <img src={arrowdown} alt="arrow down"/> </button>
         </div>
     )
 
