@@ -1,21 +1,20 @@
+
 import { useState, useEffect } from "react";
+
 
 export default function Klokke() {
 
     const [currentTime, setCurrentTime] = useState(new Date)
 
 
-useEffect(() => {
+    useEffect(() => {
 
+    const myInterval = setInterval(() => {
+            setCurrentTime(new Date);
+        }, 1000);
 
-   const myInterval = setInterval(() => {
-        setCurrentTime(new Date);
-    }, 1000);
-    
-    console.log('Utvikling er kult');
-
-    return () => clearInterval(myInterval);
-})
+        return () => clearInterval(myInterval);
+    })
     
 
 
