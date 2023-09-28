@@ -79,3 +79,11 @@
   cursor: pointer;
   height: 20%;
 }
+
+.result {
+  display: flex;
+}
+
+p {
+  padding: 2em;
+}

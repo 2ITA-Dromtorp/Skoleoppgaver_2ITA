@@ -11,8 +11,10 @@ import maskin_saks from './images/maskin_saks.png';
 import './App.css';
 
 export default function App() {
-  const [playerChoice, setPlayerChoice] = useState({ id: 0, image: ukjent });
-  const [machineChoice, setMachineChoice] = useState(ukjent);
+  const [playerPoeng, setPlayerPoeng] = useState(0)
+  const [machinePoeng, setMachinePoeng] = useState(0)
+  const [playerChoice, setPlayerChoice] = useState({ id: 0, image: ukjent});
+  const [machineChoice, setMachineChoice] = useState({ image: ukjent });
   const [winner, setWinner] = useState('Ukjent');
 
   function Stein() {
@@ -35,22 +37,29 @@ export default function App() {
     const randomNumber = Math.floor(Math.random() * 3);
     const machineChoiceTemp = myArray[randomNumber];
 
-    setMachineChoice(machineChoiceTemp);
+    setMachineChoice({ image: machineChoiceTemp, poeng: 0 });
 
     if (playerChoice.id === randomNumber) {
       setWinner('Uavgjort');
     } else if (playerChoice.id === 0 && randomNumber === 1) {
+      
       setWinner('Player wins');
+      setPlayerPoeng(playerPoeng + 1);
     } else if (playerChoice.id === 0 && randomNumber === 2) {
       setWinner('Machine wins');
+      setMachinePoeng(machinePoeng + 1)
     } else if (playerChoice.id === 1 && randomNumber === 2) {
       setWinner('Player wins');
+      setPlayerPoeng(playerPoeng + 1);
     } else if (playerChoice.id === 1 && randomNumber === 0) {
       setWinner('Machine Wins');
+      setMachinePoeng(machinePoeng + 1)
     } else if (playerChoice.id === 2 && randomNumber === 0) {
       setWinner('Player Wins');
+      setPlayerPoeng(playerPoeng + 1);
     } else {
       setWinner('Machine Wins');
+      setMachinePoeng(machinePoeng + 1)
     }
   }
 
@@ -60,9 +69,13 @@ export default function App() {
         <div className="player1">
           <img src={playerChoice.image} alt="spiller ukjent" />
         </div>
-        <div className="result">{winner}</div>
+        <div className="result">
+            <p>{playerPoeng}</p>
+            <p>{winner}</p>
+            <p>{machinePoeng}</p>
+        </div>
         <div className="machine">
-          <img src={machineChoice} alt="maskin ukjent" />
+          <img src={machineChoice.image} alt="maskin ukjent" />
         </div>
       </div>
       <div className="bottom">
