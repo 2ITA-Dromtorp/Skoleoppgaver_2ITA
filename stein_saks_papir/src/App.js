@@ -9,23 +9,30 @@ function App() {
     
     <div className='container'>
 
-      <div className='player1'>
+    <div className='top'>
+        <div className='player1'>
+
+          <img src={spiller_ukjent} alt="spiller ukjent"/>
+
+        </div>
+
+        <div className='result'>
+
+            Vinner ukjent
+
+        </div>
+
+        <div className='maschine'>
 
         <img src={spiller_ukjent} alt="spiller ukjent"/>
 
-      </div>
-
-      <div className='result'>
-
-          Vinner ukjent
+        </div>
 
       </div>
 
-      <div className='maschine'>
+      <div className='bottom'>
 
-      <img src={spiller_ukjent} alt="spiller ukjent"/>
-
-      </div>
+        </div>
       
 
     </div>
