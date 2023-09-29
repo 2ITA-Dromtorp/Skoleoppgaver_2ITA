@@ -7,7 +7,11 @@ function App() {
     <div className='container'>
 
       <div className='learer'>
-        
+
+        <div className='person'>
+          
+        </div>
+
       </div>
       
       <div className='forste_rad'>

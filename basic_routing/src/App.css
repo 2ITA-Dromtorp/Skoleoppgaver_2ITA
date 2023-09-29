@@ -46,3 +46,26 @@
   height: 25%;
   border: solid white 2px;
 }
+
+.andre_rad {
+  height: 25%;
+  border: solid white 2px;
+}
+
+.tredje_rad {
+  height: 25%;
+  border: solid white 2px;
+}
+
+.learer {
+  display: flex;
+  justify-content: center;
+  height: 25%;
+  border: solid white 2px;
+}
+
+.person {
+  width: 20%;
+  height: 50%;
+  border: solid white 2px;
+}
