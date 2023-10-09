@@ -1,11 +1,14 @@
+import { useNavigate } from "react-router-dom";
 
 export default function Elev(props) {
+
+    const navigate = useNavigate()
 
     let name = props.name;
     console.log(name);
 
     function handleClick() {
-        console.log('Elev clicked')
+        navigate(name)
     }
 
     return (
