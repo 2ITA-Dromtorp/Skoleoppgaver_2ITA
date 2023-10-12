@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import profileIMG from './images/profile-image.jpg'
 import json from './profiles'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Profile() {
 
@@ -11,18 +11,18 @@ export default function Profile() {
     console.log(profile);
 
 
-    const [student, setStudent] = useState({
-            "navn" : "Joakim",
-            "email" : "joakim@viken.no",
-            "tlf": "73737272",
-            "klasse": "lærer"
-    });
+    const [student, setStudent] = useState({});
 
-    json.elever.map((item, index) => {
-        if (profile == item.navn) {
-            console.log(item);
+useEffect(() => {
+
+    json.elever.map((elev) => {
+        if (profile == elev.navn) {
+            setStudent(elev)
         }
     })
+    
+}, [])
+    
 
     return (
         <>
@@ -30,9 +30,9 @@ export default function Profile() {
                 <div className="profilecard">
                     <h1> {profile} </h1>
                     <img src={profileIMG}></img>
-                        <p>Klasse: {profile.klasse}</p>
-                        <p>E-mail: {profile.email}</p>
-                        <p>Tlf.: {profile.tlf}</p>
+                        <p>Klasse: {student.klasse}</p>
+                        <p>E-mail: {student.email}</p>
+                        <p>Tlf.: {student.tlf}</p>
                     <button onClick={() => navigate("/")}>Til hovedmeny</button>
                 </div>
             </div>
