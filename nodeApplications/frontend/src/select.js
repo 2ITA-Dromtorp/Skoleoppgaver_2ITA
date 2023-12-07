@@ -19,7 +19,9 @@ export default function Select() {
     };
 
     return (
+        <>
         <div className="table-container">
+            
             <table className="styled-table">
                 <thead>
                     <tr>
@@ -47,5 +49,6 @@ export default function Select() {
                 </tbody>
             </table>
         </div>
+        </>
     );
 }

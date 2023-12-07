@@ -1,5 +1,4 @@
 .table-container {
-    max-height: 400px;
     overflow-y: auto;
     overflow-x: auto;
     border: 1px solid #ccc;
@@ -12,13 +11,13 @@
 .styled-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 14px; /* Adjust font size as needed */
+    font-size: 1em; /* Adjust font size as needed */
 }
 
 .styled-table th, .styled-table td {
     border: 1px solid #ddd;
     padding: 6px; /* Smaller padding */
-    text-align: left;
+    text-align: center;
 }
 
 .styled-table th {
