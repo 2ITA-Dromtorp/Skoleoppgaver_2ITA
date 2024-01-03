@@ -3,7 +3,7 @@ import axios from "axios";
 import './table_style.css';
 
 export default function Select() {
-    const [customerData, setCustomerData] = useState([]);
+    const [elevData, setElevData] = useState([]);
 
     useEffect(() => {
         getCustomersData();
@@ -13,7 +13,7 @@ export default function Select() {
         axios
             .get("http://localhost:3000/")
             .then(response => {
-                setCustomerData(response.data);
+                setElevData(response.data);
             })
             .catch(error => console.log(error));
     };
@@ -35,7 +35,7 @@ export default function Select() {
                     </tr>
                 </thead>
                 <tbody>
-                    {customerData.map(customer => (
+                    {elevData.map(customer => (
                         <tr key={customer.ElevID}>
                             <td>{customer.ElevID}</td>
                             <td>{customer.Fornavn}</td>
